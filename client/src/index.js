@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import CheeseList from './components/cheese-list';
+// import CheeseList from './components/cheese-list';
 import './index.css';
 
 const cheeses=[
@@ -11,7 +11,6 @@ const cheeses=[
 ]
 
 ReactDOM.render(
-  <App />,
-  <CheeseList cheeses={cheeses}/>,
+  <App cheeses={cheeses}/>,
   document.getElementById('root')
 );

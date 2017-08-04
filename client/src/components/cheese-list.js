@@ -1,10 +1,15 @@
 import React from 'react';
 
-export default function CheeseList(cheeses) {
+export default function CheeseList(props) {
+	const cheeses = props.cheeses.map((cheese,index) => (
+		<li key={index}>
+			{cheese}
+		</li>
+	))
 	return (
 		<div>
-			<ul>
-				{cheeses.map( (item) => <li> item </li>)}
+			<ul id="cheeseList">
+				{cheeses}
 			</ul>
 		</div>)
 }
