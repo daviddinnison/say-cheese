@@ -1,23 +1,3 @@
-// export const fetchCheeses= ()=> {
-//   return(dispatch)
-// }
-
-export const fetchCheeses = () => dispatch =>{
-    dispatch(fetchCheesesRequest());
-  fetch('/api/cheeses')
-  .then(res => {
-    if (!res.ok) {
-      return Promise.reject(res.statusText)
-    }
-    return res.json();
-  })
-  .then(cheeses => {
-    dispatch(fetchCheesesSuccess(cheese));
-  }).catch(err => {
-    dispatch(fetchCheesesError(err))
-  })
-};
-
 export const FETCH_CHEESES_SUCCESS = 'FETCH_CHEESES_SUCCESS';
 export const fetchCheesesSuccess = cheeses => ({
   type: FETCH_CHEESES_SUCCESS,
@@ -34,3 +14,19 @@ export const fetchCheesesError = error => ({
   type: FETCH_CHEESES_ERROR,
   error
 })
+
+export const fetchCheeses = () => dispatch =>{
+    dispatch(fetchCheesesRequest());
+  fetch('/api/cheeses')
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(res.statusText)
+    }
+    return res.json();
+  })
+  .then(cheeses => {
+    dispatch(fetchCheesesSuccess(cheeses));
+  }).catch(err => {
+    dispatch(fetchCheesesError(err))
+  })
+};
