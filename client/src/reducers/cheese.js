@@ -1,4 +1,5 @@
-import { FETCH_CHEESES_ERROR, FETCH_CHEESES_SUCCESS, FETCH_CHEESES_REQUEST } from '../actions/cheese';
+import { FETCH_CHEESES_ERROR, FETCH_CHEESES_SUCCESS, FETCH_CHEESES_REQUEST,fetchCheesesRequest,
+fetchCheesesError, fetchCheesesSuccess  } from '../actions/cheese';
 
 const initialState = {
   cheeses: [],

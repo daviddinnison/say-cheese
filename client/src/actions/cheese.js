@@ -16,6 +16,7 @@ export const fetchCheesesError = error => ({
 })
 
 export const fetchCheeses = () => dispatch =>{
+  console.log('cheeses being fetched');
     dispatch(fetchCheesesRequest());
   fetch('/api/cheeses')
   .then(res => {
